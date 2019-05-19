@@ -7,7 +7,9 @@ npm link
 ```
 
 Usage:
+```
 gen-c COMPONENT ?PAGENAME
+```
 
 2nd argument is optional, if it's not component will be inserted into the Homepage
 
