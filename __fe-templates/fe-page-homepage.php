@@ -1,4 +1,3 @@
-				get_template_part( '__fe-template-parts/fe-component', 'banner-slider' );
 <?php
 /**
  * Template Name: FE Dev - Homepage
