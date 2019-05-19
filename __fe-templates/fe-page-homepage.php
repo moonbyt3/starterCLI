@@ -1,3 +1,4 @@
+				get_template_part( '__fe-template-parts/fe-component', 'banner-slider' );
 <?php
 /**
  * Template Name: FE Dev - Homepage
@@ -13,9 +14,9 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-				get_template_part( '__fe-template-parts/fe-component', 'story-block' );
-				get_template_part( '__fe-template-parts/fe-component', 'cat-slider' );
-				get_template_part( '__fe-template-parts/fe-component', 'brand-promo' );
+			get_template_part( '__fe-template-parts/fe-component', 'banner-example' );
+			get_template_part( '__fe-template-parts/fe-component', 'text-block-example' );
+			get_template_part( '__fe-template-parts/fe-component', 'slider-example' );
 			?>
 
 		</main><!-- #main -->
