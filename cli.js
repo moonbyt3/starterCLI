@@ -24,7 +24,7 @@ if (pageName) {
             let positionsOfString = [];
             // finds last get_template_part
             for (var i = 0; i < fileContent.length; i++) {
-                let hasTemplatePart = fileContent[i].search('\t\t\t\tget_template_part');
+                let hasTemplatePart = fileContent[i].search('\t\t\tget_template_part');
                 
                 if (hasTemplatePart === 0) {
                     positionsOfString.push(i);
@@ -42,7 +42,7 @@ if (pageName) {
             });
             flag = true;
         } else {
-            console.log(`ERR: fe-page-${pageName}.php doesn't exists, please create it first`)
+            console.log(`ERR: fe-page-${pageName}.php doesn't exists, please copy/paste example page and rename it.`)
         }
         
     });
@@ -54,7 +54,7 @@ if (pageName) {
         let positionsOfString = [];
         // finds last get_template_part
         for (var i = 0; i < fileContent.length; i++) {
-            let hasTemplatePart = fileContent[i].search('\t\t\t\tget_template_part');
+            let hasTemplatePart = fileContent[i].search('\t\t\tget_template_part');
             
             if (hasTemplatePart === 0) {
                 positionsOfString.push(i);
@@ -62,12 +62,12 @@ if (pageName) {
             
         }
         let lastLineIndex = positionsOfString[positionsOfString.length - 1] + 1;
-        fileContent.splice(lastLineIndex, 0, `\t\t\t\tget_template_part( '__fe-template-parts/fe-component', '${componentName}' );`);
+        fileContent.splice(lastLineIndex, 0, `\t\t\tget_template_part( '__fe-template-parts/fe-component', '${componentName}' );`);
         let str = fileContent.join('\n');
         // writes new line after last template part
         fs.writeFile(`__fe-templates/fe-page-homepage.php`, str, function (err) {
-        
-                if (err) throw err;
+            
+            if (err) throw err;
             
             console.log('UPDATED __fe-templates/fe-page-homepage.php');
         });
@@ -82,7 +82,7 @@ if (flag) {
         console.log(`CREATED__fe-template-parts/fe-template-${componentName}.php`);
     });
 } else {
-    console.log(`ERR: fe-page-${pageName}.php doesn't exists, please create it first`);
+    console.log(`ERR: fe-page-${pageName}.php doesn't exists, please copy/paste example page and rename it.`);
 }
 /*
     SCSS FILES
@@ -112,5 +112,5 @@ if (flag) {
     fs.appendFile('assets/sass/style.scss', `\n @import 'components/component-${componentName}';`, (err) => {
         if (err) throw err;
         console.log('UPDATED style.scss');
-    })
+    });
 }

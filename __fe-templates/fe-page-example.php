@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: FE Dev - Homepage
+ * Template Name: FE Dev - Example
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
