@@ -75,11 +75,11 @@ if (pageName) {
 }
 if (flag) {
     
-    fs.appendFile(`__fe-template-parts/fe-template-${componentName}.php`, `<div class="${componentName}">\n\t${componentName} component\n</div>\n`, function (err) {
+    fs.appendFile(`__fe-template-parts/fe-component-${componentName}.php`, `<div class="${componentName}">\n\t${componentName} component\n</div>\n`, function (err) {
         
         if (err) throw err;
         
-        console.log(`CREATED__fe-template-parts/fe-template-${componentName}.php`);
+        console.log(`CREATED__fe-template-parts/fe-component-${componentName}.php`);
     });
 } else {
     console.log(`ERR: fe-page-${pageName}.php doesn't exists, please copy/paste example page and rename it.`);
@@ -97,19 +97,19 @@ if (!fs.existsSync(scssFolder)){
 
 if (flag) {
     //check for existance of file in that folder
-    if (fs.existsSync(`./assets/sass/components/${componentName}.scss`)) {
-        console.log(`WARNING: File ${componentName}.scss already exists, its not affected`);
+    if (fs.existsSync(`./assets/sass/components/_component-${componentName}.scss`)) {
+        console.log(`WARNING: File _component-${componentName}.scss already exists, its not affected`);
     } else {
         // it doesnt exists, create file
-        fs.appendFile(`assets/sass/components/${componentName}.scss`, `.${componentName} {\n\n}`, function (err) {
+        fs.appendFile(`assets/sass/components/_component-${componentName}.scss`, `.${componentName} {\n\n}`, function (err) {
     
             if (err) throw err;
             
-            console.log(`CREATED ./assets/sass/components/${componentName}.scss`);
+            console.log(`CREATED ./assets/sass/components/_component-${componentName}.scss`);
         });
     }
     //Update main SCSS file to import component
-    fs.appendFile('assets/sass/style.scss', `\n @import 'components/component-${componentName}';`, (err) => {
+    fs.appendFile('assets/sass/style.scss', `\n@import 'components/component-${componentName}';`, (err) => {
         if (err) throw err;
         console.log('UPDATED style.scss');
     });
