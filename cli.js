@@ -34,18 +34,17 @@ if (pageName) {
             fileContent.splice(lastLineIndex, 0, `\t\t\tget_template_part( '__fe-template-parts/fe-component', '${componentName}' );`);
             let str = fileContent.join('\n');
             // writes new line after last template part
-            fs.writeFile(`__fe-templates/fe-page-homepage.php`, str, function (err) {
+            fs.writeFile(`__fe-templates/fe-page-${pageName}.php`, str, function (err) {
             
                     if (err) throw err;
                 
                 console.log(`${pageName} page updated`);
             });
-            flag = true;
         } else {
             console.log(`ERR: fe-page-${pageName}.php doesn't exists, please copy/paste example page and rename it.`)
         }
-        
     });
+    flag = true;
 } else {
     flag = true;
     fs.readFile('__fe-templates/fe-page-homepage.php', 'utf8', function(err, contents) {
@@ -73,17 +72,15 @@ if (pageName) {
         });
     });
 }
-if (flag) {
+
+fs.appendFileSync(`__fe-template-parts/fe-component-${componentName}.php`, `<div class="${componentName}">\n\t${componentName} component\n</div>\n`, function (err) {
     
-    fs.appendFile(`__fe-template-parts/fe-component-${componentName}.php`, `<div class="${componentName}">\n\t${componentName} component\n</div>\n`, function (err) {
-        
-        if (err) throw err;
-        
-        console.log(`CREATED__fe-template-parts/fe-component-${componentName}.php`);
-    });
-} else {
-    console.log(`ERR: fe-page-${pageName}.php doesn't exists, please copy/paste example page and rename it.`);
-}
+    if (err) throw err;
+    
+    console.log(`CREATED __fe-template-parts/fe-component-${componentName}.php`);
+    flag=true;
+});
+
 /*
     SCSS FILES
 */
@@ -92,8 +89,6 @@ if (flag) {
 if (!fs.existsSync(scssFolder)){
     fs.mkdirSync(scssFolder, { recursive: true });
 }
-
-
 
 if (flag) {
     //check for existance of file in that folder
