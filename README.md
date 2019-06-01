@@ -36,7 +36,7 @@ to create banner-slider component in Homepage, type:
 gen-c banner-slider
 ```
 
-to create component in About page(you must copy paste fe-page-example.php file first, rename it and edit comments. File has to have atleast one ```get_template_part``` indented properly **TBD copyng new page template.**
+to create component in About page(you must copy paste fe-page-example.php file first, rename it and edit comments. File has to have atleast one ```get_template_part``` indented properly
 
 ```
 gen-c banner-slider about
