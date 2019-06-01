@@ -18,7 +18,8 @@
   "author": "moonbyt3",
   "license": "ISC",
   "bin": {
-    "gen-c": "./cli.js"
+    "gen-c": "./cli.js",
+    "gen-p": "./cli-page.js"
   },
   "bugs": {
     "url": "https://github.com/moonbyt3/starterCLI/issues"
