@@ -5,7 +5,8 @@ Add this line to your package.json to register gen-c command
 
 ```
 "bin": {
-    "gen-c": "./cli.js"
+    "gen-c": "./cli.js",
+    "gen-p": "./cli-page.js"
 }
 ```
 
@@ -15,6 +16,15 @@ npm link
 ```
 
 Usage:
+
+To create new page type:
+
+```
+gen-p PAGENAME
+```
+
+To create new component type:
+
 ```
 gen-c COMPONENT ?PAGENAME
 ```
