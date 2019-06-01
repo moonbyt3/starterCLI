@@ -1,7 +1,7 @@
 # starterCLI
 CLI for starter_s theme _underscores framework for WordPress
 
-Add this line to your package.json to register gen-c command
+Add this line to your package.json to register gen-c and gen-p command
 
 ```
 "bin": {
