@@ -1,5 +1,5 @@
 # starterCLI
-CLI for starter_s theme _underscores framework for WordPress
+Command line tool for creating pages and components for starter_s theme that uses _underscores framework for WordPress
 
 Add this line to your package.json to register gen-c and gen-p command
 
@@ -17,7 +17,7 @@ npm link
 
 Usage:
 
-To create new page type:
+To create new page, type:
 
 ```
 gen-p PAGENAME
@@ -29,9 +29,9 @@ To create new component type:
 gen-c COMPONENT ?PAGENAME
 ```
 
-2nd argument is optional, if it's not supplied, component will be inserted into the Homepage
+2nd argument is optional, if it's not supplied, component will be inserted into the Homepage template
 
-to create banner-slider component in Homepage, type: 
+Example to create banner-slider component in Homepage, type: 
 ```
 gen-c banner-slider
 ```
